@@ -1,0 +1,7 @@
+{
+  "name": "Slur Nuker",
+  "version": "1.0.0",
+  "description": "Replaces user-defined slurs with regex",
+  "author": "lbdBG#1337",
+  "license": "GPL-3.0"
+}
