@@ -1,7 +1,6 @@
 const { Plugin } = require('powercord/entities');
 const { inject, uninject } = require('powercord/injector');
-const { messages, getModule, FluxDispatcher } = require('powercord/webpack');
-const { findInReactTree } = require('powercord/util');
+const { getModule } = require('powercord/webpack');
 const Settings = require('./settings.jsx');
 
 module.exports = class SlurNuker extends Plugin {
@@ -11,7 +10,7 @@ module.exports = class SlurNuker extends Plugin {
       const [{message}] = args;
       if (!message || !message.content) return args;
       for (const bad of this.settings.get('badWords', [])) {
-        if (bad == undefined || bad == null || bad == '') continue;
+        if (bad == undefined || bad == '') continue;
         let regex = new RegExp(bad, 'gim');
         message.content = message.content.replace(regex, '[slur]');
       }
